@@ -1,0 +1,6 @@
+As the problem statement said, I kept everything as simple as possible. The tests I wrote are just simple console logs with the expected print commented in the code (`src/index.ts`), similar to how the tests are presented in the assignment. 
+
+The assignment called for simulating a file system structure, including the presence of any aliases. In a real file system environment, the code would require a bit more logic that would determine if the file is an alias / directory / or standard file. For the purpose of this simulation, I simply initalize the similated root filesystem with nodes that are labeled as aliases.
+
+The algorithm itself is a recursive one that treats aliases as first class cititzen. I first start at the root and recursivly visit each node in the path, once each path has been visited and resolved, I iterate throught the two paths and determine the last common node between the two paths, which is the answer. When an alias node is encountered, the traversal does not visit the aliase's target and only adds it as part of the path.
+
